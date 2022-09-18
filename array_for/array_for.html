@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ej: Arrays </title>
+</head>
+
+<body>
+    <script>
+
+        // -----------------------------------------------
+        // -------------------- MENU ---------------------
+        // -----------------------------------------------        
+
+
+        alert(`\nEjercicio:\n
+            3 arrays (1ro - (1-9) ; 2do - (par); 3er - (impar))
+            Se multiplica cada valor por un N° aleatorio (0-100) y si el
+            resultado es par o impar se guarda en el array respectivo.
+            \n`);
+
+
+        // -----------------------------------------------
+        // ------------- CREANDO LOS ARRAYS --------------
+        // ----------------------------------------------- 
+
+
+        let numeros = [1,2,3,4,5,6,7,8,9];
+        let pares = [];
+        let impares = [];
+        let aleatorios = [];
+
+        // ----------------------------------------------------
+
+        let j = 0, k = 0;
+
+        for(let i = 0; i < numeros.length; i++)
+        {
+            aleatorios[i] = Math.floor(Math.random()*101);  
+            (((numeros[i] * aleatorios[i]) % 2) == 0) ? pares[j++] = (numeros[i] * aleatorios[i]) : impares[k++] = (numeros[i] * aleatorios[i]);
+        }
+
+        // ----------------------------------------------------
+
+        document.write(`<p>Lista de números del array.</p>`);
+
+        for(let i = 0; i < numeros.length; i++)
+        {
+            document.write(`${numeros[i]} - `);
+        }
+
+        // ----------------------------------------------------
+
+        document.write(`<p>Lista de números aleatorios.</p>`);
+
+        for(let i = 0; i < numeros.length; i++)
+        {
+            document.write(`${aleatorios[i]} - `);
+        }
+
+        // ----------------------------------------------------
+
+        document.write(`<p>Lista de números pares.</p>`);
+
+        for(let i = 0; i < pares.length; i++)
+        {
+            document.write(`${pares[i]} - `);
+        }
+
+        // ----------------------------------------------------
+
+        document.write(`<p>Lista de números impares.</p>`);
+
+        for(let i = 0; i < impares.length; i++)
+        {
+            document.write(`${impares[i]} - `);
+        }
+
+        document.write(`<p></p>`);
+
+    </script>
+</body>
+
+</html>

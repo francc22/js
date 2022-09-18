@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>break y continue</title>
+</head>
+
+<body>
+    <script>
+
+        // -----------------------------------------------
+        // -------------------- MENU ---------------------
+        // -----------------------------------------------        
+
+
+        let opcionElegida = Number(prompt(`\n\nEstructura de control - Break / Continue\n
+                                           Elija la opción:\n\n
+                                           1- Alex Roel
+                                           2- Salir`));
+
+        if (Number.isNaN(opcionElegida)) {
+            alert('Debes ingresar un número!');
+            location.reload();
+        }
+        else {
+            switch (opcionElegida) {
+                case 2:
+                    {
+                        // -----------------------------------------------
+                        // -------------------- SALIR --------------------
+                        // -----------------------------------------------
+
+
+                        alert('Good bye!');
+                        break;
+                    }
+                case 1:
+                    {
+                        // -----------------------------------------------
+                        // ----------------- ALEX ROEL -------------------
+                        // -----------------------------------------------
+
+
+                        document.write(`<p></br>Tabla de multiplicar x 2 con un bucle while</br></p>`);
+                        document.write(`<p></br>Rompiendo el bucle con break</br></p>`);
+                        document.write(`<hr>`);
+
+
+                        // -----------------------------------------------
+                        // ------------------- BREAK ---------------------
+                        // -----------------------------------------------
+
+
+                        let n = 2, indice = 0, max = 10, mitad = 5;
+
+                        while (indice <= max) {
+                            document.write(`</br>${n} x ${indice} = ${n * indice++}`);
+
+                            if (indice > mitad) {
+                                document.write(`</br>Rompiendo el bucle en la mitad de la tabla...`);
+                                break;
+                            }
+                        }
+
+
+                        // -----------------------------------------------
+                        // ------------------ CONTINUE -------------------
+                        // -----------------------------------------------
+
+                        document.write(`<p></br>Saltando el bucle con continue.</br></p>`);
+                        document.write(`<hr>`);
+                        document.write(`<p>Continue salta a la siguiente iteración del bucle.</p>`);
+                        document.write(`<p>Lo que hay a continuación de continue no se ejecuta.</p>`);
+                        document.write(`<p></br>Saltando el multiplicador 5.</br></p>`);
+                        document.write(`<hr>`);
+
+                        indice = -1;
+
+                        while (indice <= max) {
+
+                            indice++;
+
+                            if (indice == mitad) {                                
+                                continue;                              
+                            }
+                            
+                            document.write(`</br>${n} x ${indice} = ${n * indice}`);    
+                                                    
+                        }
+
+                        break;
+                    }
+            }
+
+        }
+
+    </script>
+</body>
+
+</html>
