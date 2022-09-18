@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funciones</title>
+</head>
+
+<body>
+    <script>
+
+        // -----------------------------------------------
+        // ------------------ FUNCIONES ------------------
+        // ----------------------------------------------- 
+
+        function saludar() {
+            alert(`Saludando desde una función sin parametros`);
+        }
+
+        function saludar2(parametro) {
+            alert(`Saludando desde una funcion con un parametro ${parametro}`);
+        }
+
+        function saludar3(nombre) {
+            return `Hola ${nombre} desde la función saludar3`;
+        }
+
+        function sumar(num1 = null, num2 = null) {
+            if (num1 === null || num2 === null)
+                return null;
+            else
+                return (num1 + num2);
+        }
+
+        function sumar2(...args) {
+            alert(`Cuando se pasan varios args, la función los recibe en un array`);
+
+            let suma = 0;
+
+            for (let n of args) {
+                suma += n;
+            }
+
+            return suma;
+        }
+
+        const sumar3 = (a, b) => (a + b);
+
+        const saludar4 = () => {
+            return `Saludando desde una función flecha`;
+        }
+
+        // -----------------------------------------------
+        // -------------------- MENU ---------------------
+        // -----------------------------------------------        
+
+
+        let opcionElegida = Number(prompt(`\nFunciones\n
+                                           Elija la opción:\n\n
+                                           1- Alex Roel - Función s/param
+                                           2- Alex Roel - Función c/1param
+                                           3- Alex Roel - Funcion c/return
+                                           4- Alex Roel - Funcion c/param_pred 
+                                              Sumar 2 números.
+                                           5- Alex Roel - Funcion c/arg_indef
+                                              Sumar n números.
+                                           6- Alex Roel - Funcion flecha
+                                              Sumar 2 números.
+                                           7- Alex Roel - Funcion flecha
+                                              Saludar.
+                                           10- Salir`));
+
+        if (Number.isNaN(opcionElegida)) {
+            alert('Debes ingresar un número!');
+            location.reload();
+        }
+        else {
+            switch (opcionElegida) {
+                case 10:
+                    {
+                        // -----------------------------------------------
+                        // -------------------- SALIR --------------------
+                        // -----------------------------------------------
+
+
+                        alert('Good bye!');
+                        break;
+                    }
+                case 1:
+                    {
+                        saludar();
+                        break;
+                    }
+                case 2:
+                    {
+                        saludar2();
+                        break;
+                    }
+                case 3:
+                    {
+                        let nombre = saludar3(`Alex`);
+                        alert(nombre);
+                        break;
+                    }
+                case 4:
+                    {
+                        let num1 = 10, num2 = 20;
+                        const r = sumar(num1, num2);
+
+                        if (r != null)
+                            alert(`La suma de ${num1} + ${num2} = ${r}`);
+                        else
+                            alert(`No se pasaron números en los argumentos.`);
+                        break;
+                    }
+                case 5:
+                    {
+                        const s = sumar2(10, 10, 10, 10, 10);
+                        alert(`La suma de 5 veces 10 es: ${s}`);
+                        break;
+                    }
+
+                case 6:
+                    {
+                        let a = 15, b = 15;
+                        const s = sumar3(a, b);
+                        alert(`Invoco a una función flecha para sumar 2 num`);
+                        alert(`La suma de ${a} + ${b} = ${s}`);
+                        break;
+                    }
+
+                case 7:
+                    {
+                        alert(saludar4());
+                        break;
+                    }
+            }
+        }
+    </script>
+</body>
+
+</html>
