@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bucle while</title>
+</head>
+<body>
+    <script>
+
+        // -----------------------------------------------
+        // -------------------- MENU ---------------------
+        // -----------------------------------------------        
+
+
+        let opcionElegida = Number(prompt(`\n\nEstructura de control - Bucle while\n
+                                           Elija la opción:\n\n
+                                           1- Alex Roel
+                                           2- Salir`));
+
+        if (Number.isNaN(opcionElegida)){
+            alert('Debes ingresar un número!');
+            location.reload();
+        } 
+        else
+        {
+            switch(opcionElegida)
+            {
+                case 2: 
+                {
+                    // -----------------------------------------------
+                    // -------------------- SALIR --------------------
+                    // -----------------------------------------------
+
+
+                    alert('Good bye!');
+                    break;
+                }
+                case 1:
+                    {
+                        // -----------------------------------------------
+                        // ----------------- ALEX ROEL -------------------
+                        // -----------------------------------------------
+
+                        
+                        document.write(`<p></br>Tabla de multiplicar x 2 con un bucle while</br></p>`);
+                        document.write(`<hr>`);
+
+                        let n = 2, indice = 0, max = 10;
+
+                        while(indice <= max)
+                        {
+                            document.write(`</br>${n} x ${indice} = ${n * indice++}`);                            
+                        }
+
+                        //-----------------------------------------------------------------
+
+                        document.write(`<p></br>Recorriendo un array de nombres y una cadena de caracteres</br></p>`);
+                        document.write(`<hr>`);
+
+                        let texto = `Javascript`;
+                        let arrayEstudiantes = [`Alex`, `Roel`, `Juan`, `Pedro`];
+
+                        document.write(`</br>Cadena de caracteres: ${texto}</br>`);
+                        document.write(`Array de Estudiantes: ${arrayEstudiantes}</br>`);
+
+                        // ----- Trabajando con la cadena
+
+                        indice = 0;
+                        
+                        while(indice < texto.length)
+                        {
+                            // ---- Recorriendo el texto
+                            document.write(`</br>Posición:  ${indice} - Letra: ${texto[indice++]}`);                            
+                        }
+
+                        // ----- Trabajando con el array de estudiantes
+                        document.write(`</br>-----------------------------`);
+                        
+                        indice = 0;
+                        
+                        while(indice < arrayEstudiantes.length)
+                        {
+                            // ---- Recorriendo el array de estudiantes
+                            document.write(`</br>Posición:  ${indice} - Nombre: ${arrayEstudiantes[indice++]}`);                            
+                        }
+
+                        break;
+                    }
+            }
+            
+        }                                           
+
+    </script>
+</body>
+</html>
