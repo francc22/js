@@ -35,51 +35,26 @@
 
         // ----------------------------------------------------
 
-        let j = 0, k = 0;
+        /* let j = 0, k = 0;
 
         for(let i = 0; i < numeros.length; i++)
         {
             aleatorios[i] = Math.floor(Math.random()*101);  
             (((numeros[i] * aleatorios[i]) % 2) == 0) ? pares[j++] = (numeros[i] * aleatorios[i]) : impares[k++] = (numeros[i] * aleatorios[i]);
-        }
-
-        // ----------------------------------------------------
-
-        document.write(`<p>Lista de números del array.</p>`);
+        }      */  
 
         for(let i = 0; i < numeros.length; i++)
         {
-            document.write(`${numeros[i]} - `);
+            aleatorios[i] = Math.floor(Math.random()*101);  
+            (((numeros[i] * aleatorios[i]) % 2) == 0) ? pares.push((numeros[i] * aleatorios[i])) : impares.push((numeros[i] * aleatorios[i]));
         }
 
         // ----------------------------------------------------
 
-        document.write(`<p>Lista de números aleatorios.</p>`);
-
-        for(let i = 0; i < numeros.length; i++)
-        {
-            document.write(`${aleatorios[i]} - `);
-        }
-
-        // ----------------------------------------------------
-
-        document.write(`<p>Lista de números pares.</p>`);
-
-        for(let i = 0; i < pares.length; i++)
-        {
-            document.write(`${pares[i]} - `);
-        }
-
-        // ----------------------------------------------------
-
-        document.write(`<p>Lista de números impares.</p>`);
-
-        for(let i = 0; i < impares.length; i++)
-        {
-            document.write(`${impares[i]} - `);
-        }
-
-        document.write(`<p></p>`);
+        document.write(`</br>Lista de números: `, numeros);
+        document.write(`</br>Lista de números aleatorios: `, aleatorios);
+        document.write(`</br>Lista de números pares: `, pares);
+        document.write(`</br>Lista de números impares: `, impares);
 
     </script>
 </body>
