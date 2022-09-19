@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Metodos de Cadenas</title>
+</head>
+<body>
+
+    <script>
+        // -----------------------------------------------
+        // -------------------- MENU ---------------------
+        // -----------------------------------------------        
+
+
+        let opcionElegida = Number(prompt(`\n\nMetodos con cadenas\n
+                                           Elija la opción:\n\n
+                                           1- Replace - Reemplaza un caracter x otro.
+                                           2- ToUpperCase/ToLowerCase Mayusc/Minusc.
+                                           3- Split - Divide un texto en palabras segun caracter.
+                                           4- Reverse/Join - Invierte el orden del texto.
+                                           10- Salir`));
+
+        if (Number.isNaN(opcionElegida)){
+            alert('Debes ingresar un número!');
+            location.reload();
+        } 
+        else
+        {
+            switch(opcionElegida)
+            {
+                case 10: 
+                {
+                    // -----------------------------------------------
+                    // -------------------- SALIR --------------------
+                    // -----------------------------------------------
+
+
+                    alert('Good bye!');
+                    break;
+                }
+
+                case 1:
+                    {
+                        // -----------------------------------------------
+                        // ------------------- REPLACE -------------------
+                        // -----------------------------------------------
+
+                        let texto = 'javaScript';
+                        let textoReemplazado = texto.replace('S','s');
+                        alert(`Texto original: ${texto}`);
+                        alert(`Texto reemplazado: ${textoReemplazado}`);
+                        break;
+                    }
+
+                case 2:
+                    {
+                        // -----------------------------------------------
+                        // ------------- TO UPPER / TO LOWER -------------
+                        // -----------------------------------------------
+
+                        let texto = 'javaScript';
+                        let textoMayuscula = texto.toUpperCase();
+                        let textoMinuscula = texto.toLowerCase();
+                        alert(`Texto original: ${texto}`);
+                        alert(`Texto Mayuscula: ${textoMayuscula}`);
+                        alert(`Texto Minuscula: ${textoMinuscula}`);
+                        break;
+                    }
+
+                case 3:
+                    {
+                        // -----------------------------------------------
+                        // ------------- TO UPPER / TO LOWER -------------
+                        // -----------------------------------------------
+
+                        let texto = 'Aprendiendo Javascript con visual studio code';
+                        let textoDividido = texto.split(' ');
+
+                        
+                        alert(`Texto original: ${texto}`);
+                        alert(`Texto Separado por ' ': ${textoDividido}`);
+                        
+                        for(let n of textoDividido)
+                            alert(`\nPalabras del texto => ${n}`);
+                        break;
+                    }
+
+                case 4:
+                    {
+                        // -----------------------------------------------
+                        // -------------- REVERSE / JOIN -----------------
+                        // -----------------------------------------------
+
+                        let texto = 'Aprendiendo Javascript con visual studio code';                        
+                        let textoInvertido = texto.split(' ').reverse().join(' ');                        
+                        
+                        alert(`Texto original: ${texto}`);                        
+                        alert(`Texto invertido: ${textoInvertido}`);
+                        break;
+                    }
+            }
+        }
+    </script>
+</body>
+</html>
